@@ -8,7 +8,7 @@ To start the VPN, run the following command:
 
 `./wg-server start`
 
-This will create the EC2 instance using Terraform, configure the WireGuard VPN server, and generate a client configuration file. The client configuration file will be saved locally at `/etc/wireguard/wg0.conf`.
+This will create the EC2 instance using Terraform, configure the WireGuard VPN server, and generate a client configuration file. The client configuration file will be saved locally at `/etc/wireguard/wg0.conf`. After that the script automatically connects with the VPN. U can change this behavior in start.sh
 
 
 To stop the VPN, run the following command:
