@@ -1,11 +1,12 @@
 #!/bin/bash
+SCRIPT_DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 function start {
-  ./start.sh
+  $SCRIPT_DIR/start.sh
 }
 
 function stop {
-  ./stop.sh
+  $SCRIPT_DIR/stop.sh
 }
 
 case "$1" in

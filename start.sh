@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [[ -n $(terraform state list) ]]; then
+cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+
+if [[ -n $(terraform state list 2>/dev/null) ]]; then
   echo "Terraform resources have already been created. Please use './wg-server stop' to delete them first."
   exit 1
 fi

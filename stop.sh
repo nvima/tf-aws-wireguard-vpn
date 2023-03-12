@@ -1,4 +1,8 @@
-if [[ -n $(terraform state list) ]]; then
+#!/bin/bash
+
+cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+
+if [[ -n $(terraform state list 2>/dev/null) ]]; then
   echo "Stoping Wireguard..."
   sudo systemctl stop wg-quick@wg0.service
   echo "Wireguard has been stopped."
